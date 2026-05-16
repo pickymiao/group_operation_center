@@ -727,6 +727,44 @@
                     </div>
                 </div>
             </div>
+            <!-- 異常事件追蹤 -->
+            <div class="card" id="incident-summary">
+                <div class="card-header" style="cursor: default;">
+                    <div class="card-header-content">
+                        <h3>📊 照護品質 - 異常事件追蹤</h3>
+                    </div>
+                    <button class="share-card-btn" onclick="event.stopPropagation(); shareCard('incident-summary')">
+                        📤 分享
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="section">
+                        <div class="section-title">近日異常事件統計</div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 16px;">
+                            <div style="background: #fef2f2; padding: 16px; border-radius: 8px; border-left: 4px solid #ef4444;">
+                                <div style="font-size: 14px; color: #78350f; font-weight: 600; margin-bottom: 8px;">跌倒/壓瘡事件</div>
+                                <div style="font-size: 28px; font-weight: 700; color: #dc2626;">2.8</div>
+                                <div style="font-size: 12px; color: #666; margin-top: 4px;">件/日 ↓ 5.2%</div>
+                            </div>
+                            <div style="background: #eff6ff; padding: 16px; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                                <div style="font-size: 14px; color: #1e3a8a; font-weight: 600; margin-bottom: 8px;">走失/異常事件</div>
+                                <div style="font-size: 28px; font-weight: 700; color: #2563eb;">1.2</div>
+                                <div style="font-size: 12px; color: #666; margin-top: 4px;">件/日 ↑ 8.3%</div>
+                            </div>
+                            <div style="background: #fffbeb; padding: 16px; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                                <div style="font-size: 14px; color: #78350f; font-weight: 600; margin-bottom: 8px;">服務投訴</div>
+                                <div style="font-size: 28px; font-weight: 700; color: #f97316;">0.8</div>
+                                <div style="font-size: 12px; color: #666; margin-top: 4px;">件/日 ↑ 2.1%</div>
+                            </div>
+                            <div style="background: #f3f0ff; padding: 16px; border-radius: 8px; border-left: 4px solid #a855f7;">
+                                <div style="font-size: 14px; color: #581c87; font-weight: 600; margin-bottom: 8px;">其他異常</div>
+                                <div style="font-size: 28px; font-weight: 700; color: #9333ea;">4.5</div>
+                                <div style="font-size: 12px; color: #666; margin-top: 4px;">件/日 ↑ 3.2%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Tab 2: 住宿機構 -->
@@ -950,6 +988,32 @@
                         </div>
                         <div class="chart-wrapper" style="min-height: 250px;">
                             <canvas id="vacancyChart-res-1"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">📊 照護品質 - 異常事件</div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px;">
+                            <div style="background: #fef2f2; padding: 12px; border-radius: 6px; border-left: 3px solid #ef4444;">
+                                <div style="font-size: 12px; color: #78350f; font-weight: 600; margin-bottom: 6px;">跌倒事件</div>
+                                <div style="font-size: 20px; font-weight: 700; color: #dc2626;">2</div>
+                                <div style="font-size: 11px; color: #888; margin-top: 2px;">本月累計</div>
+                            </div>
+                            <div style="background: #fef3f2; padding: 12px; border-radius: 6px; border-left: 3px solid #f97316;">
+                                <div style="font-size: 12px; color: #78350f; font-weight: 600; margin-bottom: 6px;">壓瘡/皮膚</div>
+                                <div style="font-size: 20px; font-weight: 700; color: #f97316;">1</div>
+                                <div style="font-size: 11px; color: #888; margin-top: 2px;">本月累計</div>
+                            </div>
+                            <div style="background: #eff6ff; padding: 12px; border-radius: 6px; border-left: 3px solid #3b82f6;">
+                                <div style="font-size: 12px; color: #1e3a8a; font-weight: 600; margin-bottom: 6px;">誤吸/窒息</div>
+                                <div style="font-size: 20px; font-weight: 700; color: #2563eb;">0</div>
+                                <div style="font-size: 11px; color: #888; margin-top: 2px;">本月累計 ✅</div>
+                            </div>
+                            <div style="background: #f0fdfd; padding: 12px; border-radius: 6px; border-left: 3px solid #10b981;">
+                                <div style="font-size: 12px; color: #065f46; font-weight: 600; margin-bottom: 6px;">其他異常</div>
+                                <div style="font-size: 20px; font-weight: 700; color: #10b981;">3</div>
+                                <div style="font-size: 11px; color: #888; margin-top: 2px;">本月累計</div>
+                            </div>
                         </div>
                     </div>
 
@@ -1460,14 +1524,31 @@
                             </div>
                         </div>
                     </div>
+                    </div>
 
                     <div class="section">
-                        <div class="section-title">📈 近12個月趨勢</div>
-                        <div class="chart-wrapper" style="min-height: 250px;">
-                            <canvas id="attendanceChart-day-1"></canvas>
-                        </div>
-                        <div class="chart-wrapper" style="min-height: 250px;">
-                            <canvas id="revenueChart-day-1"></canvas>
+                        <div class="section-title">📊 照護品質 - 異常事件</div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px;">
+                            <div style="background: #fef2f2; padding: 12px; border-radius: 6px; border-left: 3px solid #ef4444;">
+                                <div style="font-size: 12px; color: #78350f; font-weight: 600; margin-bottom: 6px;">走失事件</div>
+                                <div style="font-size: 20px; font-weight: 700; color: #dc2626;">0</div>
+                                <div style="font-size: 11px; color: #888; margin-top: 2px;">本月累計 ✅</div>
+                            </div>
+                            <div style="background: #fef3f2; padding: 12px; border-radius: 6px; border-left: 3px solid #f97316;">
+                                <div style="font-size: 12px; color: #78350f; font-weight: 600; margin-bottom: 6px;">意外跌傷</div>
+                                <div style="font-size: 20px; font-weight: 700; color: #f97316;">1</div>
+                                <div style="font-size: 11px; color: #888; margin-top: 2px;">本月累計</div>
+                            </div>
+                            <div style="background: #eff6ff; padding: 12px; border-radius: 6px; border-left: 3px solid #3b82f6;">
+                                <div style="font-size: 12px; color: #1e3a8a; font-weight: 600; margin-bottom: 6px;">健康異常</div>
+                                <div style="font-size: 20px; font-weight: 700; color: #2563eb;">2</div>
+                                <div style="font-size: 11px; color: #888; margin-top: 2px;">本月累計</div>
+                            </div>
+                            <div style="background: #f0fdfd; padding: 12px; border-radius: 6px; border-left: 3px solid #10b981;">
+                                <div style="font-size: 12px; color: #065f46; font-weight: 600; margin-bottom: 6px;">其他事件</div>
+                                <div style="font-size: 20px; font-weight: 700; color: #10b981;">0</div>
+                                <div style="font-size: 11px; color: #888; margin-top: 2px;">本月累計 ✅</div>
+                            </div>
                         </div>
                     </div>
 
@@ -1603,14 +1684,31 @@
                             </div>
                         </div>
                     </div>
+                    </div>
 
                     <div class="section">
-                        <div class="section-title">📈 近12個月趨勢</div>
-                        <div class="chart-wrapper" style="min-height: 250px;">
-                            <canvas id="attendanceChart-day-2"></canvas>
-                        </div>
-                        <div class="chart-wrapper" style="min-height: 250px;">
-                            <canvas id="revenueChart-day-2"></canvas>
+                        <div class="section-title">📊 照護品質 - 異常事件</div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px;">
+                            <div style="background: #fef2f2; padding: 12px; border-radius: 6px; border-left: 3px solid #ef4444;">
+                                <div style="font-size: 12px; color: #78350f; font-weight: 600; margin-bottom: 6px;">走失事件</div>
+                                <div style="font-size: 20px; font-weight: 700; color: #dc2626;">1</div>
+                                <div style="font-size: 11px; color: #888; margin-top: 2px;">本月累計</div>
+                            </div>
+                            <div style="background: #fef3f2; padding: 12px; border-radius: 6px; border-left: 3px solid #f97316;">
+                                <div style="font-size: 12px; color: #78350f; font-weight: 600; margin-bottom: 6px;">意外跌傷</div>
+                                <div style="font-size: 20px; font-weight: 700; color: #f97316;">3</div>
+                                <div style="font-size: 11px; color: #888; margin-top: 2px;">本月累計</div>
+                            </div>
+                            <div style="background: #eff6ff; padding: 12px; border-radius: 6px; border-left: 3px solid #3b82f6;">
+                                <div style="font-size: 12px; color: #1e3a8a; font-weight: 600; margin-bottom: 6px;">健康異常</div>
+                                <div style="font-size: 20px; font-weight: 700; color: #2563eb;">4</div>
+                                <div style="font-size: 11px; color: #888; margin-top: 2px;">本月累計</div>
+                            </div>
+                            <div style="background: #f0fdfd; padding: 12px; border-radius: 6px; border-left: 3px solid #10b981;">
+                                <div style="font-size: 12px; color: #065f46; font-weight: 600; margin-bottom: 6px;">其他事件</div>
+                                <div style="font-size: 20px; font-weight: 700; color: #10b981;">2</div>
+                                <div style="font-size: 11px; color: #888; margin-top: 2px;">本月累計</div>
+                            </div>
                         </div>
                     </div>
 
@@ -1925,8 +2023,18 @@
             });
 
             // 顯示選中的內容
-            document.getElementById(tabName).classList.add('active');
-            event.target.classList.add('active');
+            const targetContent = document.getElementById(tabName);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+            
+            // 標記當前 tab 按鈕為 active
+            const buttons = document.querySelectorAll('.tab');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`'${tabName}'`)) {
+                    btn.classList.add('active');
+                }
+            });
         }
 
         // 詳細卡片切換
